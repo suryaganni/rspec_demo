@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validate :tasks_presence
 
   def tasks_presence
-    if tasks.empty? or tasks.all? {|child| child.marked_for_destruction? }
+    if tasks.blank? or tasks.all? {|child| child.marked_for_destruction? }
       errors.add(:base, 'Must have at least one child')
     end
   end
