@@ -1,4 +1,6 @@
 RspecDemo::Application.routes.draw do
+  resources :tasks
+  resources :users
   resources :posts
   root :to => 'posts#index'
 
